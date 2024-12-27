@@ -76,6 +76,8 @@ body {
   min-block-size: 100vh;
   min-block-size: 100dvh;
 
+  font-size: (--fz-400);
+
   > * {
     padding-inline: var(--full-width-padding-inline);
   }
