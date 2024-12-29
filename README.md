@@ -1,6 +1,6 @@
 # WellnessLink
 
-Visit [Demo](https://wellness-link.vercel.app) website.
+Visit [Demo](https://wellness-link.vercel.app) web page.
 
 ## Getting Started
 
