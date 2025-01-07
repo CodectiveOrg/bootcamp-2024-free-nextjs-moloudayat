@@ -1,6 +1,6 @@
 # WellnessLink
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Visit [Demo](https://wellness-link.vercel.app) web page.
 
 ## Getting Started
 
