@@ -23,7 +23,7 @@ export default function FilterComponent({
       <div className={styles.title}>{title}</div>
       <div className={styles.buttons}>
         {options.map((option) => (
-          <FilterButtonComponent key={option.value}>
+          <FilterButtonComponent key={option.value} onClick={}>
             {option.label}
           </FilterButtonComponent>
         ))}
