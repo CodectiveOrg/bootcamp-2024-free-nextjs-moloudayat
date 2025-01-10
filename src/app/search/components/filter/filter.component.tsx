@@ -1,13 +1,18 @@
-import { ReactElement } from "react";
+"use client";
+import { ReactElement, useContext } from "react";
 
 import CardComponent from "@/components/card/card.component";
 import FilterButtonComponent from "@/components/filter-button/filter-button.component";
+
+import { FiltersContext } from "@/app/search/providers/filters/filters.provider";
+
+import { FiltersType } from "@/app/search/types/filters.type";
 
 import styles from "./filter.module.css";
 
 type Option = {
   label: string;
-  value: string;
+  key: keyof FiltersType;
 };
 
 type Props = {
@@ -18,12 +23,19 @@ export default function FilterComponent({
   title,
   options,
 }: Props): ReactElement {
+  const { filters, changeFilter } = useContext(FiltersContext);
+
   return (
     <CardComponent>
       <div className={styles.title}>{title}</div>
       <div className={styles.buttons}>
         {options.map((option) => (
-          <FilterButtonComponent key={option.value} onClick={}>
+          <FilterButtonComponent
+            key={option.key}
+            isActive={filters[option.key]}
+            onClick={changeFilter.bind(null, option.key, !filters[option.key])}
+            // onClick={() => changeFilter(option.key, !filters[option.key])}
+          >
             {option.label}
           </FilterButtonComponent>
         ))}

@@ -4,6 +4,7 @@ import {
   PropsWithChildren,
   ReactElement,
   useState,
+  useCallback,
 } from "react";
 
 import { FiltersType } from "@/app/search/types/filters.type";
@@ -30,26 +31,30 @@ type Props = PropsWithChildren;
 export default function FiltersPropvider({ children }: Props): ReactElement {
   const [filters, setFilters] = useState<FiltersType>({});
 
-  const changeFilter: ContextValue["changeFilter"] = <
-    Tkey extends keyof FiltersType,
-  >(
-    key: Tkey,
-    value: Exclude<FiltersType[Tkey], undefined>,
-  ): void => {
-    setFilters((old) => ({ ...old, [key]: value }));
-  };
+  const changeFilter = useCallback(
+    <Tkey extends keyof FiltersType>(
+      key: Tkey,
+      value: Exclude<FiltersType[Tkey], undefined>,
+    ): void => {
+      setFilters((old) => ({ ...old, [key]: value }));
+    },
+    [],
+  );
 
-  const removeFilter = <Tkey extends keyof FiltersType>(key: Tkey): void => {
-    setFilters((old) => {
-      const clone = { ...old };
-      delete clone[key];
-      return clone;
-    });
-  };
+  const removeFilter = useCallback(
+    <Tkey extends keyof FiltersType>(key: Tkey): void => {
+      setFilters((old) => {
+        const clone = { ...old };
+        delete clone[key];
+        return clone;
+      });
+    },
+    [],
+  );
 
-  const clearAll = (): void => {
+  const clearAll = useCallback((): void => {
     setFilters({});
-  };
+  }, []);
 
   return (
     <FiltersContext.Provider

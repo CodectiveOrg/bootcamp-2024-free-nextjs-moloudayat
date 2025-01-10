@@ -2,7 +2,7 @@ import { ReactElement } from "react";
 
 import FilterComponent from "./components/filter/filter.component";
 
-import FiltersPropvider from "./providers/filters/filters.component";
+import FiltersPropvider from "./providers/filters/filters.provider";
 
 import styles from "./page.module.css";
 
@@ -17,16 +17,16 @@ export default function Page(): ReactElement {
           <FilterComponent
             title="زوج یا فرد"
             options={[
-              { value: "even", label: "زوج" },
-              { value: "odd", label: "فرد" },
+              { key: "even", label: "زوج" },
+              { key: "odd", label: "فرد" },
             ]}
           />
           <FilterComponent
             title="بخش‌پذیری"
             options={[
-              { value: "three", label: "بخش‌پذیر بر ۳" },
-              { value: "five", label: "بخش‌پذیر بر ۵" },
-              { value: "seven", label: "بخش‌پذیر بر ۷" },
+              { key: "three", label: "بخش‌پذیر بر ۳" },
+              { key: "five", label: "بخش‌پذیر بر ۵" },
+              { key: "seven", label: "بخش‌پذیر بر ۷" },
             ]}
           />
         </div>
