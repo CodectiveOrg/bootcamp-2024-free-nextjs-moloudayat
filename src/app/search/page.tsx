@@ -1,14 +1,12 @@
 import { ReactElement } from "react";
 
 import FilterComponent from "./components/filter/filter.component";
+import ListComponent from "./components/list/list.component";
 
 import FiltersPropvider from "./providers/filters/filters.provider";
 
 import styles from "./page.module.css";
 
-const items = Array(100)
-  .fill(null)
-  .map((_, index) => index + 1);
 export default function Page(): ReactElement {
   return (
     <FiltersPropvider>
@@ -30,13 +28,7 @@ export default function Page(): ReactElement {
             ]}
           />
         </div>
-        <ul className={styles.results}>
-          {items.map((item) => (
-            <li key={item} className={item % 2 === 0 ? styles.active : ""}>
-              {item}
-            </li>
-          ))}
-        </ul>
+        <ListComponent />
       </div>
     </FiltersPropvider>
   );
