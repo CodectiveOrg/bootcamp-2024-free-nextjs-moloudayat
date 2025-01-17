@@ -5,7 +5,6 @@ import GlobalSearchBoxComponent from "@/components/global-search-box/global-sear
 import MyDoctorLogo from "@/logo/my-doctor.logo";
 
 import styles from "./page.module.css";
-import SelectComponent from "@/components/select/select.component";
 
 export default function Home(): ReactElement {
   return (
@@ -15,20 +14,13 @@ export default function Home(): ReactElement {
         پیوند سلامتی
       </h1>
       <GlobalSearchBoxComponent />
-      <SelectComponent
-        options={[
-          { value: "all", label: "همه" },
-          { value: "male", label: "مرد" },
-          { value: "female", label: "زن" },
-        ]}
-      />
-      {/* <div className={styles.history}>
+      <div className={styles.history}>
         <div className={styles.title}>آخرین جستجوهای شما</div>
         <ul>
           <li>ارتوپد</li>
           <li>قلب و عروق</li>
         </ul>
-      </div> */}
+      </div>
     </div>
   );
 }
