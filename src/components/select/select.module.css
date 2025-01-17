@@ -33,7 +33,6 @@
   .options {
     background-color: var(--color-gray-99);
     box-shadow: var(--shadow-400);
-
     position: absolute;
     inset-block-start: calc(100% + 0.5rem);
     inset-inline-start: 0;
@@ -81,7 +80,6 @@
   &.floating {
     background-color: var(--color-gray-99);
     box-shadow: var(--shadow-400);
-
     &:not(&:focus, &.open) {
       border-color: transparent;
     }

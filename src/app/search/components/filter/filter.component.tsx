@@ -2,11 +2,10 @@
 import { ReactElement, useContext } from "react";
 
 import CardComponent from "@/components/card/card.component";
-import FilterButtonComponent from "@/components/filter-button/filter-button.component";
 
 import { FiltersContext } from "@/app/search/providers/filters/filters.provider";
 
-import { FiltersType } from "@/app/search/types/filters.type";
+import { FiltersType } from "@/types/filters.type";
 
 import styles from "./filter.module.css";
 
@@ -29,7 +28,7 @@ export default function FilterComponent({
     <CardComponent>
       <div className={styles.title}>{title}</div>
       <div className={styles.buttons}>
-        {options.map((option) => (
+        {/* {options.map((option) => (
           <FilterButtonComponent
             key={option.key}
             isActive={filters[option.key]}
@@ -38,7 +37,7 @@ export default function FilterComponent({
           >
             {option.label}
           </FilterButtonComponent>
-        ))}
+        ))} */}
       </div>
     </CardComponent>
   );
