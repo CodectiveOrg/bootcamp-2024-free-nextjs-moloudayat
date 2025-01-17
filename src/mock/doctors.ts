@@ -1,26 +1,5 @@
 import { DoctorModel } from "@/models/doctor.model";
 
-/* You can scrape search api using this code
-temp1.map((x) => ({
-  id: x.id,
-  name: x.title,
-  image: x.image,
-  isVerified: true,
-  gender: x.gender === 1 ? "آقا" : "خانم",
-  averageRating: x.rate_info.quality_of_treatment,
-  totalVotes: x.rate_info.rates_count,
-  address: x.display_address,
-  firstAvailableAppointment: x.actions[1].top_title.substring(
-    21,
-    x.actions[0].top_title.length - 11,
-  ),
-  brief: x.expertises[0].alias_title,
-  degree: x.expertises[0].degree.name,
-  expertise: x.expertises[0].expertise_groups[0].name,
-  badges: x.badges.map((y) => y.title),
-}));
-*/
-
 export const doctors: DoctorModel[] = [
   {
     id: "76b55838-346f-11eb-8d4b-005056b09c11",
